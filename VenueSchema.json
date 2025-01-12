@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Venue Schema",
+  "description": "Schema for venue research data entry",
+  "type": "object",
+  "required": [
+    "name",
+    "description",
+    "address",
+    "neighborhood",
+    "venue_type"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the venue"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the venue"
+    },
+    "image": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the venue's image"
+    },
+    "address": {
+      "type": "string",
+      "description": "Physical address of the venue"
+    },
+    "neighborhood": {
+      "type": "string",
+      "enum": [
+        "Centrum-West",
+        "Osdorp",
+        "Centrum-Oost",
+        "Westerpark",
+        "Bos en Lommer",
+        "Oud-West, De Baarsjes",
+        "Sloterdijk Nieuw-West",
+        "Geuzenveld, Slotermeer",
+        "De Aker, Sloten, Nieuw-Sloten",
+        "Slotervaart",
+        "Oud-Zuid",
+        "Buitenveldert, Zuidas",
+        "De Pijp, Rivierenbuurt",
+        "Oud-Noord",
+        "Oud-Oost",
+        "Indische Buurt, Oostelijk Havengebied",
+        "Watergraafsmeer",
+        "IJburg, Zeeburgereiland",
+        "Noord-West",
+        "Noord-Oost",
+        "Bijlmer-West",
+        "Bijlmer-Centrum",
+        "Bijlmer-Oost",
+        "Gaasperdam",
+        "Weesp, Driemond"
+      ],
+      "description": "Neighborhood where the venue is located"
+    },
+    "rating": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "Rating of the venue (0-5)"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Cheap",
+          "Quiet", 
+          "Casual",
+          "Romantic",
+          "Scenic View",
+          "Outdoor Heater",
+          "Terrace/Outdoor Seating",
+          "Cozy",
+          "Live Music"
+        ]
+      },
+      "description": "Array of predefined tags describing the venue"
+    },
+    "drinks": {
+      "type": "object",
+      "properties": {
+        "beer": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Price of beer"
+        },
+        "redWine": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Price of red wine"
+        },
+        "cocktail": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Price of cocktails"
+        },
+        "espresso": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Price of espresso"
+        },
+        "cappuccino": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Price of cappuccino"
+        }
+      },
+      "description": "Drink prices at the venue"
+    },
+    "venue_type": {
+      "type": "string",
+      "enum": [
+        "Drinks",
+        "Food",
+        "Coffee",
+        "Activity"
+      ],
+      "description": "Type of venue"
+    }
+  }
+}

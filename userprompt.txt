@@ -1,0 +1,1 @@
+Analyze the map screenshot and fill in the json schema below. Make sure not to invent/hallucinate any new fields, if you cannot find information for a field, then leave it null/blank, but never make up a value for it.
